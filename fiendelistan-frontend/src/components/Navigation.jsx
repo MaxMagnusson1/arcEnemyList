@@ -6,7 +6,7 @@ function Navigation() {
         <nav className="navigation">
             <ul className="nav-list">
                 <li className="nav-item">
-                    <Link to="/" className="nav-link">Enemys</Link>
+                    <Link to="/" className="nav-link">Enemies</Link>
                 </li>
                 <li className="nav-item">
                     <Link to="/Friends" className="nav-link">Friends</Link>
