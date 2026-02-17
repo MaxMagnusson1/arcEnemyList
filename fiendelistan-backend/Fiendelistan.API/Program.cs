@@ -56,7 +56,7 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
-app.UseCors("AllowFrontend");
+app.UseCors("AllowReactApp");
 app.MapControllers();
 
 app.Run();
