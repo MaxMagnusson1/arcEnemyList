@@ -11,14 +11,17 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString));
 
+// Extra tolerant CORS-policy för felsökning
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins("https://myarcenemies.onrender.com")
-              .AllowAnyHeader()
-              .AllowAnyMethod()
-              .AllowCredentials();
+        policy
+            .SetIsOriginAllowed(_ => true) // Tillåt ALLA origins för felsökning
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+        // För produktion: byt till .WithOrigins("https://myarcenemies.onrender.com")
     });
 });
 
@@ -51,12 +54,11 @@ catch (Exception ex)
     throw; // Låt appen krascha så vi ser problemet
 }
 
-// Swagger alltid aktiv
+app.UseHttpsRedirection();
+app.UseCors("AllowReactApp"); // Så tidigt som möjligt!
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
-app.UseCors("AllowReactApp");
 app.MapControllers();
 
 app.Run();
