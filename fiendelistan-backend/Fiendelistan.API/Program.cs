@@ -17,11 +17,10 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp", policy =>
     {
         policy
-            .SetIsOriginAllowed(_ => true) // Tillåt ALLA origins för felsökning
+            .WithOrigins("https://myarcenemies.onrender.com")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
-        // För produktion: byt till .WithOrigins("https://myarcenemies.onrender.com")
     });
 });
 
