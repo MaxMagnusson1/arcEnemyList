@@ -13,7 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Fiendelistan.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5a6ddc490422930eb5ec38027be22c6b8517db3b")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+>>>>>>> 78490e42b81b7b3dee206a3818f18c5d51437c60
 [assembly: System.Reflection.AssemblyProductAttribute("Fiendelistan.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Fiendelistan.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
